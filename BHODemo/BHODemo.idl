@@ -1,0 +1,34 @@
+// BHODemo.idl : BHODemo 的 IDL 源
+//
+
+// 此文件将由 MIDL 工具处理以
+// 产生类型库(BHODemo.tlb)和封送处理代码。
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(DACB0813-D759-444F-8877-09D272D3C6F8),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ILocationURL : IDispatch{
+};
+[
+	uuid(415984EA-5B0C-4281-A5D9-4B879EFAD84D),
+	version(1.0),
+]
+library BHODemoLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(13D32687-42C9-4BA1-95F9-DE4A513D570A)		
+	]
+	coclass LocationURL
+	{
+		[default] interface ILocationURL;
+	};
+};
+

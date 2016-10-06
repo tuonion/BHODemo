@@ -1,0 +1,37 @@
+HKCR
+{
+	NoRemove CLSID
+	{
+		ForceRemove {13D32687-42C9-4BA1-95F9-DE4A513D570A} = s 'LocationURL Class'
+		{
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			TypeLib = s '{415984EA-5B0C-4281-A5D9-4B879EFAD84D}'
+			Version = s '1.0'
+		}
+	}
+}
+HKCU
+{
+  NoRemove SOFTWARE
+  {
+    NoRemove Microsoft
+    {
+      NoRemove 'Internet Explorer'
+      {
+        NoRemove Extensions
+        {
+          ForceRemove '{415984EA-5B0C-4281-A5D9-4B879EFAD84D}'
+          {
+            val 'CLSID' = s '{1FBA04EE-3024-11D2-8F1F-0000F87ABD16}'
+            val 'MenuText' = s 'LocationURL'
+            val 'ClsIDExtension' = s '{13D32687-42C9-4BA1-95F9-DE4A513D570A}'
+          }
+        }
+      }
+    }
+  }
+}
